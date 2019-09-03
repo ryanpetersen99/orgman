@@ -1,6 +1,10 @@
 package ac.za.cput.adp3.xyzcongolmerate.factory.user;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.demography.Gender;
+import ac.za.cput.adp3.xyzcongolmerate.domain.demography.Race;
 import ac.za.cput.adp3.xyzcongolmerate.domain.user.UserDemography;
+import ac.za.cput.adp3.xyzcongolmerate.factory.demography.GenderFactory;
+import ac.za.cput.adp3.xyzcongolmerate.factory.demography.RaceFactory;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +18,10 @@ public class UserDemographyFactoryTest {
     @Test
     public void buildUserDemography() {
         Date date = new Date();
-        UserDemography userDemography = UserDemographyFactory.buildUserDemography("666@mycput.ac.za","Lecturer","GF-666","RF-666",date);
+        Race race = RaceFactory.buildRace("Coloured"); //Generates ID
+        Gender gender = GenderFactory.buildGender("Male"); //Generates ID
+
+        UserDemography userDemography = UserDemographyFactory.buildUserDemography("666@mycput.ac.za","Lecturer",gender.getGenderId(),race.getRaceId(),date);
         Assert.assertNotNull(userDemography);
         System.out.println(userDemography.toString());
 
