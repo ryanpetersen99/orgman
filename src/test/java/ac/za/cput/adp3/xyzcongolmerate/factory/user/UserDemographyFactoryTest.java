@@ -14,7 +14,7 @@ public class UserDemographyFactoryTest {
     @Test
     public void buildUserDemography() {
         Date date = new Date();
-        UserDemography userDemography = UserDemographyFactory.buildUserDemography("666@mycput.ac.za","Lecturer","Male","Coloured",date);
+        UserDemography userDemography = UserDemographyFactory.buildUserDemography("666@mycput.ac.za","Lecturer","GF-666","RF-666",date);
         Assert.assertNotNull(userDemography);
         System.out.println(userDemography.toString());
 
