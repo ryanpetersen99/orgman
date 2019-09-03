@@ -11,7 +11,7 @@ public class OrganisationUserFactoryTest {
 
     @Test
     public void buildOrganisationUser() {
-        Organisation organisation = OrganisationFactory.buildOrganisation("University");
+        Organisation organisation = OrganisationFactory.buildOrganisation("University"); //Generate ID
 
         OrganisationUser organisationUser = OrganisationUserFactory.buildOrganisationUser(organisation.getOrgCode(),"person@mycput.ac.za");
         Assert.assertNotNull(organisationUser);
