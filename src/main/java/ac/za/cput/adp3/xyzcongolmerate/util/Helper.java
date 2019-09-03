@@ -1,5 +1,5 @@
 package ac.za.cput.adp3.xyzcongolmerate.util;
-
+/* Ryan Petersen 217027806 */
 import java.util.UUID;
 
 public class Helper {
@@ -14,13 +14,12 @@ public class Helper {
 
     public static String getSuffixFromClassName(Class<?> aClass) {
         String className = getClassName(aClass);
-        throw new UnsupportedOperationException("Not yet supported!");
-        /**
-         * Your implementation goes here
-         *
-         * INSTRUCTION
-         * 1. Remove line 17 [throw new UnsupportedOperationException("Not yet supported!");]
-         * 2. Get the capitalized letter(s) from the className and return it.
-         */
+        String capitals = "";
+
+        for (int i = 0; i < className.length(); i++) {
+            if (Character.isUpperCase(className.charAt(i)))
+                capitals = capitals + className.charAt(i);
+        }
+        return capitals;
     }
 }
